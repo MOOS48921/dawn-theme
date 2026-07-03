@@ -3,7 +3,7 @@
   Accepts: block (section block with prefix/text settings)
 {%- endcomment -%}
 
-<div class="product-urgency">
+<div class="product-urgency" data-product-urgency>
   <span class="product-urgency__icon" aria-hidden="true">
     <svg width="20" height="18" viewBox="0 0 20 18" fill="none" xmlns="http://www.w3.org/2000/svg">
       <path d="M10 1L1 17h18L10 1z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/>
@@ -18,3 +18,26 @@
     {{ block.settings.text }}
   </p>
 </div>
+
+<script>
+(function () {
+  function placeUrgencyNotice() {
+    document.querySelectorAll('[data-product-urgency]').forEach(function (notice) {
+      var container = notice.closest('.product__info-wrapper, .product-info');
+      if (!container) return;
+      var form = container.querySelector('product-form, .product-form');
+      if (form && form.previousElementSibling !== notice) {
+        form.parentNode.insertBefore(notice, form);
+      }
+    });
+  }
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', placeUrgencyNotice);
+  } else {
+    placeUrgencyNotice();
+  }
+  window.addEventListener('load', placeUrgencyNotice);
+  setTimeout(placeUrgencyNotice, 800);
+  setTimeout(placeUrgencyNotice, 2000);
+})();
+</script>
