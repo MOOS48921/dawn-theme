@@ -5,8 +5,8 @@
 .hero-banner {
   background-color: #1a5c2e;
   background-image: var(--hero-bg-image);
-  background-size: cover;
-  background-position: right center;
+  background-size: contain;
+  background-position: center center;
   background-repeat: no-repeat;
   width: 100%;
   min-height: 560px;
