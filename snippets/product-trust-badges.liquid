@@ -1,0 +1,60 @@
+{%- comment -%}
+  Renders payment icons + USP checklist for the product page.
+  Accepts: block (section block with usp_1/usp_2/usp_3/show_payment_icons settings)
+{%- endcomment -%}
+
+<div class="product-trust">
+  {%- if block.settings.show_payment_icons -%}
+    <div class="product-trust__payments">
+      <div class="product-trust__payments-header">
+        <span class="product-trust__lock-icon" aria-hidden="true">
+          <svg width="14" height="16" viewBox="0 0 14 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect x="1" y="7" width="12" height="9" rx="2" stroke="currentColor" stroke-width="1.5"/>
+            <path d="M4 7V4.5a3 3 0 0 1 6 0V7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+          </svg>
+        </span>
+        <span class="product-trust__payments-label">Veilige betalingen</span>
+      </div>
+      <div class="product-trust__payment-icons">
+        <img src="https://cdn.shopify.com/s/files/1/1035/2767/8294/files/images.png?v=1781102072" alt="Visa" loading="lazy" width="42" height="28">
+        <img src="https://cdn.shopify.com/s/files/1/1035/2767/8294/files/Mastercard_2019_logo.svg?v=1781102106" alt="Mastercard" loading="lazy" width="42" height="28">
+        <img src="https://cdn.shopify.com/s/files/1/1035/2767/8294/files/apple-pay-og-twitter.jpg?v=1781102058" alt="Apple Pay" loading="lazy" width="42" height="28">
+        <img src="https://cdn.shopify.com/s/files/1/1035/2767/8294/files/ideal-logo-seo.png?v=1781101930" alt="iDEAL" loading="lazy" width="42" height="28">
+        <img src="https://cdn.shopify.com/s/files/1/1035/2767/8294/files/bancontact-krijgt-nieuw-logo-zonder-mr-cash.avif?v=1781101920" alt="Bancontact" loading="lazy" width="42" height="28">
+      </div>
+    </div>
+  {%- endif -%}
+
+  <ul class="product-trust__usps" aria-label="Voordelen">
+    {%- if block.settings.usp_1 != blank -%}
+      <li>
+        <span class="product-trust__usp-check" aria-hidden="true">
+          <svg width="12" height="10" viewBox="0 0 12 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <polyline points="1,5 4.5,8.5 11,1" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </span>
+        {{ block.settings.usp_1 }}
+      </li>
+    {%- endif -%}
+    {%- if block.settings.usp_2 != blank -%}
+      <li>
+        <span class="product-trust__usp-check" aria-hidden="true">
+          <svg width="12" height="10" viewBox="0 0 12 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <polyline points="1,5 4.5,8.5 11,1" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </span>
+        {{ block.settings.usp_2 }}
+      </li>
+    {%- endif -%}
+    {%- if block.settings.usp_3 != blank -%}
+      <li>
+        <span class="product-trust__usp-check" aria-hidden="true">
+          <svg width="12" height="10" viewBox="0 0 12 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <polyline points="1,5 4.5,8.5 11,1" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </span>
+        {{ block.settings.usp_3 }}
+      </li>
+    {%- endif -%}
+  </ul>
+</div>

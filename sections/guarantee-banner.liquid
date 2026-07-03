@@ -1,0 +1,115 @@
+{{ 'guarantee-banner.css' | asset_url | stylesheet_tag }}
+
+<div
+  class="guarantee-banner"
+  style="--guarantee-padding-top: {{ section.settings.padding_top }}px; --guarantee-padding-bottom: {{ section.settings.padding_bottom }}px;"
+>
+  <div class="guarantee-banner__inner">
+    <div class="guarantee-banner__card">
+
+      <div class="guarantee-banner__shield">
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M12 2L3 7v5c0 5.25 3.75 10.15 9 11.35C17.25 22.15 21 17.25 21 12V7L12 2z"/>
+          <path d="M9 12l2 2 4-4"/>
+        </svg>
+      </div>
+
+      {%- if section.settings.heading != blank -%}
+        <h2 class="guarantee-banner__heading">{{ section.settings.heading }}</h2>
+      {%- endif -%}
+
+      {%- if section.settings.text != blank -%}
+        <p class="guarantee-banner__subtext">{{ section.settings.text }}</p>
+      {%- endif -%}
+
+      {%- if section.settings.button_label != blank -%}
+        <a href="{{ section.settings.button_link | default: '#' }}" class="guarantee-banner__btn">{{ section.settings.button_label }}</a>
+      {%- endif -%}
+
+      <div class="guarantee-banner__checks">
+        {%- for block in section.blocks -%}
+          <div class="guarantee-banner__check" {{ block.shopify_attributes }}>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+            {{ block.settings.text }}
+          </div>
+        {%- endfor -%}
+      </div>
+
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Guarantee banner",
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Titel",
+      "default": "Probeer 90 Dagen Risicovrij"
+    },
+    {
+      "type": "textarea",
+      "id": "text",
+      "label": "Tekst",
+      "default": "Bij Peptidesmeester zijn we trots om onze klanten een tevredenheidsgarantie van 90 dagen te bieden op al onze producten. Als je na drie maanden niet tevreden bent met het resultaat betalen we het volledige bedrag terug. Zonder gedoe, beloofd."
+    },
+    {
+      "type": "text",
+      "id": "button_label",
+      "label": "Knoptekst",
+      "default": "PROBEER RISICOVRIJ"
+    },
+    {
+      "type": "url",
+      "id": "button_link",
+      "label": "Knoplink"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 120,
+      "step": 4,
+      "unit": "px",
+      "label": "Ruimte boven",
+      "default": 60
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 120,
+      "step": 4,
+      "unit": "px",
+      "label": "Ruimte onder",
+      "default": 60
+    }
+  ],
+  "blocks": [
+    {
+      "type": "check",
+      "name": "Checkmark",
+      "settings": [
+        {
+          "type": "text",
+          "id": "text",
+          "label": "Tekst",
+          "default": "100% Tevreden"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Guarantee banner",
+      "blocks": [
+        { "type": "check", "settings": { "text": "100% Tevreden" } },
+        { "type": "check", "settings": { "text": "Discreet Verpakt" } },
+        { "type": "check", "settings": { "text": "Gratis Retourneren" } }
+      ]
+    }
+  ]
+}
+{% endschema %}

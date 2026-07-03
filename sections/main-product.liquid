@@ -15,6 +15,7 @@
   {{ 'component-slider.css' | asset_url | stylesheet_tag }}
   {{ 'component-rating.css' | asset_url | stylesheet_tag }}
   {{ 'component-deferred-media.css' | asset_url | stylesheet_tag }}
+  {{ 'product-info-extras.css' | asset_url | stylesheet_tag }}
 
   {% unless product.has_only_default_variant %}
     {{ 'component-product-variant-picker.css' | asset_url | stylesheet_tag }}
@@ -499,6 +500,10 @@
                     section_id: section.id,
                     show_pickup_availability: true
                   -%}
+                {%- when 'trust_badges' -%}
+                  {%- render 'product-trust-badges', block: block -%}
+                {%- when 'delivery_timeline' -%}
+                  {%- render 'product-delivery-timeline', block: block -%}
                 {%- when 'rating' -%}
                   {%- if product.metafields.reviews.rating.value != blank -%}
                     <div class="rating-wrapper">
@@ -940,6 +945,56 @@
           "default": true,
           "label": "t:sections.main-product.blocks.buy_buttons.settings.show_gift_card_recipient.label",
           "info": "t:sections.main-product.blocks.buy_buttons.settings.show_gift_card_recipient.info"
+        }
+      ]
+    },
+    {
+      "type": "trust_badges",
+      "name": "Betaal- en verzendtrust",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "checkbox",
+          "id": "show_payment_icons",
+          "label": "Toon betaalicoontjes",
+          "default": true
+        },
+        {
+          "type": "text",
+          "id": "usp_1",
+          "label": "USP 1",
+          "default": "Levering binnen 1-2 werkdagen"
+        },
+        {
+          "type": "text",
+          "id": "usp_2",
+          "label": "USP 2",
+          "default": "Ophalen bij afhaalpunt beschikbaar"
+        },
+        {
+          "type": "text",
+          "id": "usp_3",
+          "label": "USP 3",
+          "default": "Discreet verpakt"
+        }
+      ]
+    },
+    {
+      "type": "delivery_timeline",
+      "name": "Bezorg-tijdlijn",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "text",
+          "id": "headline",
+          "label": "Titel",
+          "default": "Bestel voor 14:00 voor verzending op dezelfde dag"
+        },
+        {
+          "type": "text",
+          "id": "subtext",
+          "label": "Subtekst",
+          "default": "Bestel nu, verzendt volgende werkdag"
         }
       ]
     },

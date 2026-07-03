@@ -3,13 +3,6 @@
     "main": {
       "type": "main-product",
       "blocks": {
-        "vendor": {
-          "type": "text",
-          "settings": {
-            "text": "{{ product.vendor }}",
-            "text_style": "uppercase"
-          }
-        },
         "title": {
           "type": "title"
         },
@@ -33,25 +26,35 @@
             "show_gift_card_recipient": true
           }
         },
+        "trust_badges": {
+          "type": "trust_badges",
+          "settings": {
+            "show_payment_icons": true,
+            "usp_1": "Levering binnen 1-2 werkdagen",
+            "usp_2": "Ophalen bij afhaalpunt beschikbaar",
+            "usp_3": "Discreet verpakt"
+          }
+        },
+        "delivery_timeline": {
+          "type": "delivery_timeline",
+          "settings": {
+            "headline": "Bestel voor 14:00 voor verzending op dezelfde dag",
+            "subtext": "Bestel nu, verzendt volgende werkdag"
+          }
+        },
         "description": {
           "type": "description"
-        },
-        "share": {
-          "type": "share",
-          "settings": {
-            "share_label": "Share"
-          }
         }
       },
       "block_order": [
-        "vendor",
         "title",
         "price",
         "variant_picker",
         "quantity_selector",
         "buy_buttons",
-        "description",
-        "share"
+        "trust_badges",
+        "delivery_timeline",
+        "description"
       ],
       "settings": {
         "enable_sticky_info": true,
@@ -69,17 +72,203 @@
         "padding_bottom": 12
       }
     },
-    "disclosures": {
-      "type": "disclosures",
+    "quality_info": {
+      "type": "image-with-text",
+      "blocks": {
+        "heading": {
+          "type": "heading",
+          "settings": {
+            "heading": "Kwaliteit & Zuiverheid",
+            "heading_size": "h1"
+          }
+        },
+        "text": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Elke batch wordt onafhankelijk laboratoriumgetest op een zuiverheid van ≥99% en geleverd met een Certificaat van Analyse (COA). Onze peptiden worden geproduceerd in Europa onder gecontroleerde omstandigheden, uitsluitend bestemd voor onderzoeksdoeleinden.<\/p>"
+          }
+        }
+      },
+      "block_order": ["heading", "text"],
       "settings": {
+        "height": "medium",
+        "desktop_image_width": "medium",
+        "layout": "text_first",
+        "desktop_content_position": "middle",
+        "desktop_content_alignment": "left",
+        "content_layout": "no-overlap",
+        "color_scheme": "scheme-2",
+        "mobile_content_alignment": "left",
         "padding_top": 36,
-        "padding_bottom": 0
+        "padding_bottom": 36
+      }
+    },
+    "quick_facts": {
+      "type": "multicolumn",
+      "blocks": {
+        "column-0": {
+          "type": "column",
+          "settings": {
+            "title": "Snelle, discrete verzending",
+            "text": "<p>Besteld voor 14:00 verzonden dezelfde werkdag, discreet verpakt met track &amp; trace.<\/p>",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "column-1": {
+          "type": "column",
+          "settings": {
+            "title": "90 dagen garantie",
+            "text": "<p>Niet tevreden? Binnen 90 dagen krijg je het volledige bedrag terug, zonder gedoe.<\/p>",
+            "link_label": "",
+            "link": ""
+          }
+        }
+      },
+      "block_order": ["column-0", "column-1"],
+      "settings": {
+        "title": "",
+        "heading_size": "h1",
+        "image_width": "full",
+        "image_ratio": "adapt",
+        "columns_desktop": 2,
+        "column_alignment": "left",
+        "background_style": "none",
+        "button_label": "",
+        "button_link": "",
+        "swipe_on_mobile": false,
+        "color_scheme": "scheme-1",
+        "columns_mobile": "1",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "info_accordion": {
+      "type": "collapsible-content",
+      "blocks": {
+        "row-shipping": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Verzending & Levering",
+            "icon": "truck",
+            "row_content": "<p><strong>Nederland:<\/strong> gratis verzending<br><strong>België:<\/strong> gratis verzending<br><strong>Duitsland:<\/strong> 3-7 werkdagen, €9,95<br><strong>Rest van Europa:<\/strong> 3-7 werkdagen, €14,95<\/p><p>Verzending vanuit Nederland · discrete verpakking · track &amp; trace inbegrepen · gratis verzending vanaf €250.<\/p>"
+          }
+        },
+        "row-disclaimer": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Gebruik en disclaimer",
+            "icon": "info",
+            "row_content": "<p>Uitsluitend bestemd voor onderzoeksdoeleinden. Niet bestemd voor menselijk gebruik, diagnose of behandeling. Alleen voor gekwalificeerd personeel in een gecontroleerde onderzoeksomgeving. Door dit product te kopen, bevestigt u dat u deze gebruiksvoorwaarden hebt gelezen en akkoord gaat met standaard onderzoekspraktijken.<\/p>"
+          }
+        }
+      },
+      "block_order": ["row-shipping", "row-disclaimer"],
+      "settings": {
+        "caption": "",
+        "heading": "Meer informatie",
+        "heading_size": "h2",
+        "heading_alignment": "left",
+        "layout": "none",
+        "container_color_scheme": "scheme-1",
+        "color_scheme": "scheme-1",
+        "image_ratio": "adapt",
+        "desktop_layout": "image_first",
+        "open_first_collapsible_row": false,
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "faq": {
+      "type": "collapsible-content",
+      "blocks": {
+        "row-1": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Hoe snel wordt mijn bestelling verzonden?",
+            "icon": "stopwatch",
+            "row_content": "<p>Alle bestellingen worden discreet verpakt en verstuurd binnen 1-2 werkdagen. Je ontvangt een track &amp; trace code zodra je pakket onderweg is.<\/p>"
+          }
+        },
+        "row-2": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Wat is de kwaliteit van jullie peptiden?",
+            "icon": "check_mark",
+            "row_content": "<p>Al onze peptiden worden geproduceerd in Europa en getest door onafhankelijke laboratoria op een zuiverheid van ≥99%. Elk product wordt geleverd met een Certificaat van Analyse.<\/p>"
+          }
+        },
+        "row-3": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Wat als ik niet tevreden ben met mijn bestelling?",
+            "icon": "heart",
+            "row_content": "<p>We bieden een 90-dagen geld-terug-garantie. Ben je niet tevreden? Neem dan contact op met onze klantenservice en we lossen het op.<\/p>"
+          }
+        }
+      },
+      "block_order": ["row-1", "row-2", "row-3"],
+      "settings": {
+        "caption": "",
+        "heading": "Veelgestelde vragen",
+        "heading_size": "h2",
+        "heading_alignment": "left",
+        "layout": "none",
+        "container_color_scheme": "scheme-1",
+        "color_scheme": "scheme-1",
+        "image_ratio": "adapt",
+        "desktop_layout": "image_first",
+        "open_first_collapsible_row": false,
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "testimonials_product": {
+      "type": "testimonials",
+      "blocks": {
+        "review-1": {
+          "type": "review",
+          "settings": {
+            "rating": 5,
+            "title": "Merkbaar verschil na 6 weken",
+            "text": "Ik gebruik Retatrutide nu 6 weken en het verschil is merkbaar. Minder honger, meer energie. Ik was sceptisch maar de resultaten liegen er niet om.",
+            "author_name": "Peter K.",
+            "verified": true
+          }
+        },
+        "review-2": {
+          "type": "review",
+          "settings": {
+            "rating": 5,
+            "title": "Supersnel geleverd, topkwaliteit",
+            "text": "Supersnel geleverd en discreet verpakt. De kwaliteit is uitstekend, het COA was bijgesloten. Ik bestel hier zeker opnieuw.",
+            "author_name": "Anita R.",
+            "verified": true
+          }
+        },
+        "review-3": {
+          "type": "review",
+          "settings": {
+            "rating": 5,
+            "title": "Vetpercentage daalt, spiermassa behouden",
+            "text": "Na twee maanden merk ik dat mijn vetpercentage duidelijk daalt terwijl ik spiermassa behoud. Exact wat ik zocht.",
+            "author_name": "Thomas V.",
+            "verified": true
+          }
+        }
+      },
+      "block_order": ["review-1", "review-2", "review-3"],
+      "settings": {
+        "heading": "Wat onze klanten zeggen",
+        "color_scheme": "scheme-1",
+        "padding_top": 60,
+        "padding_bottom": 60
       }
     },
     "related-products": {
       "type": "related-products",
       "settings": {
-        "heading": "You may also like",
+        "heading": "Ook interessant voor jou",
         "heading_size": "h2",
         "products_to_show": 4,
         "columns_desktop": 4,
@@ -93,11 +282,33 @@
         "padding_top": 36,
         "padding_bottom": 28
       }
+    },
+    "guarantee_banner": {
+      "type": "guarantee-banner",
+      "blocks": {
+        "check-1": { "type": "check", "settings": { "text": "100% Tevreden" } },
+        "check-2": { "type": "check", "settings": { "text": "Discreet Verpakt" } },
+        "check-3": { "type": "check", "settings": { "text": "Gratis Retourneren" } }
+      },
+      "block_order": ["check-1", "check-2", "check-3"],
+      "settings": {
+        "heading": "Probeer 90 Dagen Risicovrij",
+        "text": "Bij Peptidesmeester zijn we trots om onze klanten een tevredenheidsgarantie van 90 dagen te bieden op al onze producten. Als je na drie maanden niet tevreden bent met het resultaat betalen we het volledige bedrag terug. Zonder gedoe, beloofd.",
+        "button_label": "PROBEER RISICOVRIJ",
+        "button_link": "/collections/all",
+        "padding_top": 60,
+        "padding_bottom": 80
+      }
     }
   },
   "order": [
     "main",
-    "disclosures",
+    "quality_info",
+    "quick_facts",
+    "info_accordion",
+    "faq",
+    "testimonials_product",
+    "guarantee_banner",
     "related-products"
   ]
 }

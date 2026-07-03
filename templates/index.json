@@ -1,75 +1,130 @@
 {
   "sections": {
-    "image_banner": {
-      "type": "image-banner",
-      "blocks": {
-        "heading": {
-          "type": "heading",
-          "settings": {
-            "heading": "Browse our latest products",
-            "heading_size": "h0"
-          }
-        },
-        "button": {
-          "type": "buttons",
-          "settings": {
-            "button_label_1": "Shop all",
-            "button_link_1": "shopify://collections/all",
-            "button_style_secondary_1": true,
-            "button_label_2": "",
-            "button_link_2": "",
-            "button_style_secondary_2": false
-          }
-        }
-      },
-      "block_order": [
-        "heading",
-        "button"
-      ],
+    "hero_banner": {
+      "type": "hero-banner",
       "settings": {
-        "image_overlay_opacity": 40,
-        "image_height": "large",
-        "desktop_content_position": "bottom-center",
-        "show_text_box": false,
-        "image_behavior": "none",
-        "desktop_content_alignment": "center",
-        "color_scheme": "scheme-3",
-        "mobile_content_alignment": "center",
-        "stack_images_on_mobile": false,
-        "show_text_below": false
+        "eyebrow_text": "WAAR KWALITEIT HEERST",
+        "heading": "WELKOM BIJ PEPTIDESMEESTER",
+        "button_primary_label": "SHOP BUNDELS",
+        "button_primary_link": "shopify://collections/all",
+        "button_secondary_label": "Volg ons op Telegram",
+        "button_secondary_subtext": "voor exclusieve aanbiedingen",
+        "button_secondary_link": "",
+        "padding_top": 96,
+        "padding_bottom": 96
       }
     },
     "featured_collection": {
       "type": "featured-collection",
       "settings": {
-        "title": "Featured products",
+        "collection": "all",
+        "products_to_show": 2,
+        "title": "SHOP ONZE BESTSELLERS",
         "heading_size": "h2",
         "description": "",
         "show_description": false,
         "description_style": "body",
-        "collection": "all",
-        "products_to_show": 8,
-        "columns_desktop": 4,
-        "color_scheme": "scheme-1",
-        "full_width": false,
-        "show_view_all": true,
-        "view_all_style": "solid",
+        "columns_desktop": 2,
         "enable_desktop_slider": false,
-        "swipe_on_mobile": false,
+        "full_width": false,
+        "show_view_all": false,
+        "view_all_style": "solid",
+        "color_scheme": "scheme-1",
         "image_ratio": "adapt",
         "image_shape": "default",
         "show_secondary_image": true,
         "show_vendor": false,
         "show_rating": false,
         "quick_add": "none",
-        "columns_mobile": "2",
-        "padding_top": 44,
+        "columns_mobile": "1",
+        "swipe_on_mobile": false,
+        "padding_top": 28,
         "padding_bottom": 36
+      }
+    },
+    "why_choose_us": {
+      "type": "why-choose-us",
+      "settings": {
+        "heading": "WAAROM ONDERZOEKERS KIEZEN VOOR PEPTIDESMEESTER",
+        "paragraph_1": "Wij leveren in Europa geproduceerde peptiden met een geverifieerde zuiverheid van ≥99%. Elke batch wordt onafhankelijk getest en wordt geleverd met een Certificaat van Analyse.",
+        "paragraph_2": "Word lid van onze Telegram-community voor exclusieve aanbiedingen, onderzoeksupdates en directe ondersteuning van ons team.",
+        "usp1_title": "Laboratorium Getest",
+        "usp1_text": "Alle producten getest op zuiverheid en kwaliteit",
+        "usp2_title": "Verzending dezelfde dag",
+        "usp2_text": "Snelle levering door heel Europa",
+        "usp3_title": "Gebruiksrichtlijnen",
+        "usp3_text": "Deskundig advies over productbehandeling",
+        "usp4_title": "Klantenservice",
+        "usp4_text": "Toegewijde ondersteuning voor al uw vragen",
+        "padding_top": 80,
+        "padding_bottom": 80
+      }
+    },
+    "testimonials": {
+      "type": "testimonials",
+      "blocks": {
+        "review-1": {
+          "type": "review",
+          "settings": {
+            "rating": 5,
+            "title": "8 kilo kwijt in 8 weken",
+            "text": "Na jaren worstelen met mijn gewicht besloot ik het anders aan te pakken. Binnen 8 weken was ik 6 kilo kwijt zonder mezelf uit te hongeren. Ik voel me energieker dan ooit en mijn eetlust is eindelijk onder controle. Had dit veel eerder moeten proberen.",
+            "author_name": "Linda V.",
+            "verified": true
+          }
+        },
+        "review-2": {
+          "type": "review",
+          "settings": {
+            "rating": 5,
+            "title": "Twee maten kleiner na 10 weken",
+            "text": "Mijn broek zit na 10 weken twee maten kleiner. Ik was sceptisch maar de resultaten spreken voor zich. Gecombineerd met wat meer bewegen ben ik 9 kilo afgevallen. De levering was supersnel en discreet verpakt, precies wat ik nodig had.",
+            "author_name": "Mark de B.",
+            "verified": true
+          }
+        },
+        "review-3": {
+          "type": "review",
+          "settings": {
+            "rating": 5,
+            "title": "Ik voel me weer mezelf",
+            "text": "Na mijn zwangerschap lukte het maar niet om mijn gewicht kwijt te raken. Een vriendin tipt mij dit en ik ben zo blij dat ik het geprobeerd heb. Min 7 kilo in 9 weken. De klantenservice was ook top — snel antwoord op al mijn vragen.",
+            "author_name": "Sophie M.",
+            "verified": true
+          }
+        }
+      },
+      "block_order": ["review-1", "review-2", "review-3"],
+      "settings": {
+        "heading": "Wat onze klanten zeggen",
+        "color_scheme": "scheme-1",
+        "padding_top": 60,
+        "padding_bottom": 60
+      }
+    },
+    "guarantee_banner": {
+      "type": "guarantee-banner",
+      "blocks": {
+        "check-1": { "type": "check", "settings": { "text": "100% Tevreden" } },
+        "check-2": { "type": "check", "settings": { "text": "Discreet Verpakt" } },
+        "check-3": { "type": "check", "settings": { "text": "Gratis Retourneren" } }
+      },
+      "block_order": ["check-1", "check-2", "check-3"],
+      "settings": {
+        "heading": "Probeer 90 Dagen Risicovrij",
+        "text": "Bij Peptidesmeester zijn we trots om onze klanten een tevredenheidsgarantie van 90 dagen te bieden op al onze producten. Als je na drie maanden niet tevreden bent met het resultaat betalen we het volledige bedrag terug. Zonder gedoe, beloofd.",
+        "button_label": "PROBEER RISICOVRIJ",
+        "button_link": "/collections/all",
+        "padding_top": 60,
+        "padding_bottom": 80
       }
     }
   },
   "order": [
-    "image_banner",
-    "featured_collection"
+    "hero_banner",
+    "featured_collection",
+    "why_choose_us",
+    "testimonials",
+    "guarantee_banner"
   ]
 }
