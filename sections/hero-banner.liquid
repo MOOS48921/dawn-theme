@@ -1,26 +1,22 @@
 {{ 'hero-banner.css' | asset_url | stylesheet_tag }}
 
-{%- assign hero_bg_url = 'https://cdn.shopify.com/s/files/1/1035/2767/8294/files/magnific_a-professional-shopify-ho_wPF1Bqz7EI.jpg?v=1781304851' -%}
-{%- if section.settings.hero_image != blank -%}
-  {%- assign hero_bg_url = section.settings.hero_image | image_url: width: 2000 -%}
-{%- endif -%}
+<section class="hero-banner color-{{ section.settings.color_scheme }}">
+  <div class="hero-banner__grid">
 
-<section
-  class="hero-banner color-{{ section.settings.color_scheme }}"
-  style="--hero-bg-image: url('{{ hero_bg_url }}'); --hero-padding-top: {{ section.settings.padding_top }}px; --hero-padding-bottom: {{ section.settings.padding_bottom }}px;"
->
-  <div class="hero-banner__inner page-width">
-    {%- if section.settings.eyebrow_text != blank -%}
-      <p class="hero-banner__eyebrow">{{ section.settings.eyebrow_text }}</p>
-    {%- endif -%}
+    <div
+      class="hero-banner__text"
+      style="--hero-padding-top: {{ section.settings.padding_top }}px; --hero-padding-bottom: {{ section.settings.padding_bottom }}px;"
+    >
+      {%- if section.settings.eyebrow_text != blank -%}
+        <p class="hero-banner__eyebrow">{{ section.settings.eyebrow_text }}</p>
+      {%- endif -%}
 
-    {%- if section.settings.heading != blank -%}
-      <h1 class="hero-banner__heading">{{ section.settings.heading }}</h1>
-    {%- endif -%}
+      {%- if section.settings.heading != blank -%}
+        <h1 class="hero-banner__heading">{{ section.settings.heading }}</h1>
+      {%- endif -%}
 
-    <div class="hero-banner__divider" aria-hidden="true"></div>
+      <div class="hero-banner__divider" aria-hidden="true"></div>
 
-    <div class="hero-banner__buttons">
       {%- if section.settings.button_primary_label != blank -%}
         <a
           href="{{ section.settings.button_primary_link | default: '#' }}"
@@ -29,26 +25,14 @@
           {{ section.settings.button_primary_label }}
         </a>
       {%- endif -%}
+    </div>
 
-      {%- if section.settings.button_secondary_label != blank -%}
-        <a
-          href="{{ section.settings.button_secondary_link | default: '#' }}"
-          class="hero-banner__btn hero-banner__btn--secondary"
-        >
-          <span class="hero-banner__btn-icon" aria-hidden="true">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-              <path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.894 8.221-1.97 9.28c-.145.658-.537.818-1.084.508l-3-2.21-1.447 1.394c-.16.16-.295.295-.605.295l.213-3.053 5.56-5.023c.242-.213-.054-.333-.373-.12l-6.871 4.326-2.962-.924c-.643-.204-.657-.643.136-.953l11.57-4.461c.537-.194 1.006.131.833.941z"/>
-            </svg>
-          </span>
-          <span class="hero-banner__btn-text">
-            <span class="hero-banner__btn-label">{{ section.settings.button_secondary_label }}</span>
-            {%- if section.settings.button_secondary_subtext != blank -%}
-              <span class="hero-banner__btn-subtext">{{ section.settings.button_secondary_subtext }}</span>
-            {%- endif -%}
-          </span>
-        </a>
+    <div class="hero-banner__media">
+      {%- if section.settings.hero_image != blank -%}
+        {{ section.settings.hero_image | image_url: width: 1200 | image_tag: loading: 'eager', class: 'hero-banner__image' }}
       {%- endif -%}
     </div>
+
   </div>
 </section>
 
@@ -60,7 +44,7 @@
     {
       "type": "image_picker",
       "id": "hero_image",
-      "label": "Achtergrondafbeelding"
+      "label": "Afbeelding"
     },
     {
       "type": "color_scheme",
@@ -82,7 +66,7 @@
     },
     {
       "type": "header",
-      "content": "Primaire knop"
+      "content": "Knop"
     },
     {
       "type": "text",
@@ -93,27 +77,6 @@
     {
       "type": "url",
       "id": "button_primary_link",
-      "label": "Link"
-    },
-    {
-      "type": "header",
-      "content": "Secundaire knop"
-    },
-    {
-      "type": "text",
-      "id": "button_secondary_label",
-      "label": "Tekst",
-      "default": "Volg ons op Telegram"
-    },
-    {
-      "type": "text",
-      "id": "button_secondary_subtext",
-      "label": "Subtekst",
-      "default": "voor exclusieve aanbiedingen"
-    },
-    {
-      "type": "url",
-      "id": "button_secondary_link",
       "label": "Link"
     },
     {
