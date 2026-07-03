@@ -1,0 +1,164 @@
+/* ── Peptides Footer ─────────────────────────────────────────── */
+
+.peptides-footer {
+  background: #1a5c2e;
+  color: #fff;
+  padding: 60px 0 0;
+  margin-top: 0;
+  font-size: 1.4rem;
+  line-height: 1.7;
+}
+
+.peptides-footer__inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* ── 4-column grid ── */
+.peptides-footer__columns {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 40px 32px;
+  padding-bottom: 40px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+@media (max-width: 900px) {
+  .peptides-footer__columns {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 480px) {
+  .peptides-footer__columns {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ── Column headings ── */
+.peptides-footer__heading {
+  color: #ffffff;
+  font-size: 1.2rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin: 0 0 16px;
+}
+
+/* ── Link lists ── */
+.peptides-footer__links {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.peptides-footer__links li {
+  margin-bottom: 10px;
+}
+
+.peptides-footer__link {
+  color: #ffffff;
+  text-decoration: none;
+  transition: color 0.2s;
+  opacity: 0.85;
+}
+
+.peptides-footer__link:hover {
+  color: #ffffff;
+  opacity: 1;
+}
+
+/* ── Language selector ── */
+.peptides-footer__lang {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: #1f6b35;
+  border: 1px solid #333;
+  border-radius: 20px;
+  padding: 7px 14px;
+  cursor: pointer;
+  position: relative;
+  transition: border-color 0.2s;
+}
+
+.peptides-footer__lang:hover {
+  border-color: #ffffff;
+}
+
+.peptides-footer__lang-flag {
+  font-size: 1.2rem;
+  line-height: 1;
+}
+
+.peptides-footer__lang-select {
+  background: transparent;
+  border: none;
+  color: #fff;
+  font-size: 1.3rem;
+  cursor: pointer;
+  appearance: none;
+  -webkit-appearance: none;
+  padding-right: 4px;
+  outline: none;
+  font-family: inherit;
+}
+
+.peptides-footer__lang-select option {
+  background: #1f6b35;
+  color: #fff;
+}
+
+.peptides-footer__lang-caret {
+  color: #888;
+  display: flex;
+  align-items: center;
+  pointer-events: none;
+}
+
+/* ── Bottom bar ── */
+.peptides-footer__bottom {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  padding: 28px 0 36px;
+}
+
+/* ── Payment icons ── */
+.peptides-footer__payment-icons {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.peptides-footer__pay-img {
+  height: 28px;
+  width: auto;
+  border-radius: 4px;
+  background: #ffffff;
+  padding: 3px 6px;
+  object-fit: contain;
+  display: block;
+}
+
+.peptides-footer__pay-img--dark {
+  background: #000;
+}
+
+/* ── Copyright ── */
+.peptides-footer__copyright {
+  color: rgba(255, 255, 255, 0.4);
+  font-size: 1.2rem;
+  margin: 0;
+  text-align: center;
+}
+
+@media (max-width: 640px) {
+  .peptides-footer__bottom {
+    align-items: center;
+  }
+}
