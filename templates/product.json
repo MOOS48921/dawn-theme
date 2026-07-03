@@ -42,8 +42,8 @@
             "subtext": "Bestel nu, verzendt volgende werkdag"
           }
         },
-        "description": {
-          "type": "description"
+        "info_accordion": {
+          "type": "info_accordion"
         }
       },
       "block_order": [
@@ -54,7 +54,7 @@
         "buy_buttons",
         "trust_badges",
         "delivery_timeline",
-        "description"
+        "info_accordion"
       ],
       "settings": {
         "enable_sticky_info": true,
@@ -140,42 +140,6 @@
         "swipe_on_mobile": false,
         "color_scheme": "scheme-1",
         "columns_mobile": "1",
-        "padding_top": 36,
-        "padding_bottom": 36
-      }
-    },
-    "info_accordion": {
-      "type": "collapsible-content",
-      "blocks": {
-        "row-shipping": {
-          "type": "collapsible_row",
-          "settings": {
-            "heading": "Verzending & Levering",
-            "icon": "truck",
-            "row_content": "<p><strong>Nederland:<\/strong> gratis verzending<br><strong>België:<\/strong> gratis verzending<br><strong>Duitsland:<\/strong> 3-7 werkdagen, €9,95<br><strong>Rest van Europa:<\/strong> 3-7 werkdagen, €14,95<\/p><p>Verzending vanuit Nederland · discrete verpakking · track &amp; trace inbegrepen · gratis verzending vanaf €250.<\/p>"
-          }
-        },
-        "row-disclaimer": {
-          "type": "collapsible_row",
-          "settings": {
-            "heading": "Gebruik en disclaimer",
-            "icon": "info",
-            "row_content": "<p>Uitsluitend bestemd voor onderzoeksdoeleinden. Niet bestemd voor menselijk gebruik, diagnose of behandeling. Alleen voor gekwalificeerd personeel in een gecontroleerde onderzoeksomgeving. Door dit product te kopen, bevestigt u dat u deze gebruiksvoorwaarden hebt gelezen en akkoord gaat met standaard onderzoekspraktijken.<\/p>"
-          }
-        }
-      },
-      "block_order": ["row-shipping", "row-disclaimer"],
-      "settings": {
-        "caption": "",
-        "heading": "Meer informatie",
-        "heading_size": "h2",
-        "heading_alignment": "left",
-        "layout": "none",
-        "container_color_scheme": "scheme-1",
-        "color_scheme": "scheme-1",
-        "image_ratio": "adapt",
-        "desktop_layout": "image_first",
-        "open_first_collapsible_row": false,
         "padding_top": 36,
         "padding_bottom": 36
       }
@@ -330,7 +294,6 @@
     "main",
     "quality_info",
     "quick_facts",
-    "info_accordion",
     "faq",
     "testimonials_product",
     "guarantee_banner",

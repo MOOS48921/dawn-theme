@@ -504,6 +504,8 @@
                   {%- render 'product-trust-badges', block: block -%}
                 {%- when 'delivery_timeline' -%}
                   {%- render 'product-delivery-timeline', block: block -%}
+                {%- when 'info_accordion' -%}
+                  {%- render 'product-info-accordion', product: product, section_id: section.id -%}
                 {%- when 'rating' -%}
                   {%- if product.metafields.reviews.rating.value != blank -%}
                     <div class="rating-wrapper">
@@ -997,6 +999,11 @@
           "default": "Bestel nu, verzendt volgende werkdag"
         }
       ]
+    },
+    {
+      "type": "info_accordion",
+      "name": "Info-accordion (beschrijving/verzending/disclaimer)",
+      "limit": 1
     },
     {
       "type": "description",

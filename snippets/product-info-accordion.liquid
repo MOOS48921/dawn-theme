@@ -1,0 +1,161 @@
+{%- comment -%}
+  Renders the Productbeschrijving / Verzending & Levering / Gebruik en
+  disclaimer accordion panel, plus a "Terug naar Producten" button.
+  Accepts: product, section_id
+{%- endcomment -%}
+
+{{ 'product-info-accordion.css' | asset_url | stylesheet_tag }}
+
+{%- capture check_svg -%}
+  <svg width="10" height="9" viewBox="0 0 10 9" fill="none" xmlns="http://www.w3.org/2000/svg"><polyline points="1,4.5 3.8,7.5 9,1.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+{%- endcapture -%}
+
+{%- capture warning_svg -%}
+  <svg width="16" height="15" viewBox="0 0 16 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M8 1L1 13h14L8 1z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/>
+    <line x1="8" y1="6" x2="8" y2="9.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+    <circle cx="8" cy="11.5" r="0.8" fill="currentColor"/>
+  </svg>
+{%- endcapture -%}
+
+<div class="product-panels" id="ProductPanels-{{ section_id }}">
+
+  {%- comment -%} Productbeschrijving {%- endcomment -%}
+  <div class="product-panel" data-product-panel>
+    <button class="product-panel__trigger" aria-expanded="true" aria-controls="panel-desc-{{ section_id }}">
+      <span class="product-panel__title">Productbeschrijving</span>
+      <span class="product-panel__caret" aria-hidden="true">
+        <svg width="12" height="8" viewBox="0 0 12 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M1 1.5l5 5 5-5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </span>
+    </button>
+    <div class="product-panel__body" id="panel-desc-{{ section_id }}">
+      <div class="product-panel__content rte">
+        {%- if product.description != blank -%}
+          {{ product.description }}
+        {%- else -%}
+          <p>Productbeschrijving volgt binnenkort.</p>
+        {%- endif -%}
+      </div>
+    </div>
+  </div>
+
+  {%- comment -%} Verzending & Levering {%- endcomment -%}
+  <div class="product-panel" data-product-panel>
+    <button class="product-panel__trigger" aria-expanded="false" aria-controls="panel-ship-{{ section_id }}">
+      <span class="product-panel__title">Verzending &amp; Levering</span>
+      <span class="product-panel__caret" aria-hidden="true">
+        <svg width="12" height="8" viewBox="0 0 12 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M1 1.5l5 5 5-5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </span>
+    </button>
+    <div class="product-panel__body" id="panel-ship-{{ section_id }}" hidden>
+      <div class="product-panel__content">
+        <ul class="product-shipping-list">
+          <li>
+            <span class="product-shipping-list__check" aria-hidden="true">{{ check_svg }}</span>
+            <span><strong>Nederland:</strong> gratis verzending</span>
+          </li>
+          <li>
+            <span class="product-shipping-list__check" aria-hidden="true">{{ check_svg }}</span>
+            <span><strong>België:</strong> gratis verzending</span>
+          </li>
+          <li>
+            <span class="product-shipping-list__check" aria-hidden="true">{{ check_svg }}</span>
+            <span><strong>Duitsland:</strong> 3-7 werkdagen, €9,95</span>
+          </li>
+          <li>
+            <span class="product-shipping-list__check" aria-hidden="true">{{ check_svg }}</span>
+            <span><strong>Rest van Europa:</strong> 3-7 werkdagen, €14,95</span>
+          </li>
+          <li>
+            <span class="product-shipping-list__check" aria-hidden="true">{{ check_svg }}</span>
+            <span>Verzending vanuit Nederland · discrete verpakking · track &amp; trace inbegrepen</span>
+          </li>
+          <li>
+            <span class="product-shipping-list__check" aria-hidden="true">{{ check_svg }}</span>
+            <span>Gratis verzending vanaf €250</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  {%- comment -%} Gebruik en disclaimer {%- endcomment -%}
+  <div class="product-panel" data-product-panel>
+    <button class="product-panel__trigger" aria-expanded="false" aria-controls="panel-disc-{{ section_id }}">
+      <span class="product-panel__title">Gebruik en disclaimer</span>
+      <span class="product-panel__caret" aria-hidden="true">
+        <svg width="12" height="8" viewBox="0 0 12 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M1 1.5l5 5 5-5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </span>
+    </button>
+    <div class="product-panel__body" id="panel-disc-{{ section_id }}" hidden>
+      <div class="product-panel__content">
+        <ul class="product-disclaimer-list">
+          <li>
+            <span class="product-disclaimer-list__icon" aria-hidden="true">{{ warning_svg }}</span>
+            Uitsluitend bestemd voor onderzoeksdoeleinden.
+          </li>
+          <li>
+            <span class="product-disclaimer-list__icon" aria-hidden="true">{{ warning_svg }}</span>
+            Niet bestemd voor menselijk gebruik, diagnose of behandeling.
+          </li>
+          <li>
+            <span class="product-disclaimer-list__icon" aria-hidden="true">{{ warning_svg }}</span>
+            Alleen voor gekwalificeerd personeel in een gecontroleerde onderzoeksomgeving.
+          </li>
+          <li>
+            <span class="product-disclaimer-list__icon" aria-hidden="true">{{ warning_svg }}</span>
+            Door dit product te kopen, bevestigt u dat u deze gebruiksvoorwaarden hebt gelezen en akkoord gaat met standaard onderzoekspraktijken.
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="product-back-btn-wrap">
+    <a href="/collections/all" class="product-back-btn">&larr; Terug naar Producten</a>
+  </div>
+
+</div>
+
+<script>
+(function () {
+  function initPanels(root) {
+    root.querySelectorAll('[data-product-panel]').forEach(function (panel) {
+      var btn = panel.querySelector('.product-panel__trigger');
+      var body = panel.querySelector('.product-panel__body');
+      if (!btn || !body || btn.dataset.bound) return;
+      btn.dataset.bound = 'true';
+      btn.addEventListener('click', function () {
+        var open = btn.getAttribute('aria-expanded') === 'true';
+        var container = panel.closest('.product-panels');
+        if (container) {
+          container.querySelectorAll('[data-product-panel]').forEach(function (other) {
+            if (other === panel) return;
+            var ob = other.querySelector('.product-panel__trigger');
+            var obody = other.querySelector('.product-panel__body');
+            if (ob) ob.setAttribute('aria-expanded', 'false');
+            if (obody) obody.hidden = true;
+          });
+        }
+        btn.setAttribute('aria-expanded', String(!open));
+        body.hidden = open;
+      });
+    });
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', function () { initPanels(document); });
+  } else {
+    initPanels(document);
+  }
+  document.addEventListener('shopify:section:load', function (e) {
+    initPanels(e.target || document);
+  });
+})();
+</script>
