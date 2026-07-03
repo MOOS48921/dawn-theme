@@ -1,0 +1,161 @@
+{{ 'week-timeline.css' | asset_url | stylesheet_tag }}
+
+<section
+  class="week-timeline"
+  style="--week-timeline-padding-top: {{ section.settings.padding_top }}px; --week-timeline-padding-bottom: {{ section.settings.padding_bottom }}px;"
+>
+  {%- if section.settings.heading != blank -%}
+    <h2 class="week-timeline__heading">{{ section.settings.heading }}</h2>
+  {%- endif -%}
+
+  <div class="week-timeline__track">
+    <div class="week-timeline__line" aria-hidden="true"></div>
+    <div class="week-timeline__steps">
+      {%- for block in section.blocks -%}
+        <div class="week-timeline__step" {{ block.shopify_attributes }}>
+          <div class="week-timeline__dot" aria-hidden="true"></div>
+          {%- if block.settings.week_label != blank -%}
+            <p class="week-timeline__week">{{ block.settings.week_label }}</p>
+          {%- endif -%}
+          {%- if block.settings.badge != blank -%}
+            <span class="week-timeline__badge">{{ block.settings.badge }}</span>
+          {%- endif -%}
+          {%- if block.settings.text != blank -%}
+            <p class="week-timeline__body">{{ block.settings.text }}</p>
+          {%- endif -%}
+          {%- if block.settings.bullet_1 != blank or block.settings.bullet_2 != blank -%}
+            <ul class="week-timeline__bullets">
+              {%- if block.settings.bullet_1 != blank -%}<li>{{ block.settings.bullet_1 }}</li>{%- endif -%}
+              {%- if block.settings.bullet_2 != blank -%}<li>{{ block.settings.bullet_2 }}</li>{%- endif -%}
+            </ul>
+          {%- endif -%}
+        </div>
+      {%- endfor -%}
+    </div>
+  </div>
+
+  {%- if section.settings.disclaimer != blank -%}
+    <p class="week-timeline__disclaimer">{{ section.settings.disclaimer }}</p>
+  {%- endif -%}
+</section>
+
+{% schema %}
+{
+  "name": "Week-tijdlijn",
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Titel",
+      "default": "Wat je kunt verwachten door de weken heen"
+    },
+    {
+      "type": "text",
+      "id": "disclaimer",
+      "label": "Disclaimer",
+      "default": "* Individuele resultaten kunnen variëren."
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 120,
+      "step": 4,
+      "unit": "px",
+      "label": "Ruimte boven",
+      "default": 60
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 120,
+      "step": 4,
+      "unit": "px",
+      "label": "Ruimte onder",
+      "default": 60
+    }
+  ],
+  "blocks": [
+    {
+      "type": "stage",
+      "name": "Week-fase",
+      "settings": [
+        {
+          "type": "text",
+          "id": "week_label",
+          "label": "Weeklabel",
+          "default": "WEEK 1-2:"
+        },
+        {
+          "type": "text",
+          "id": "badge",
+          "label": "Fasenaam"
+        },
+        {
+          "type": "textarea",
+          "id": "text",
+          "label": "Tekst"
+        },
+        {
+          "type": "text",
+          "id": "bullet_1",
+          "label": "Bullet 1"
+        },
+        {
+          "type": "text",
+          "id": "bullet_2",
+          "label": "Bullet 2"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Week-tijdlijn",
+      "blocks": [
+        {
+          "type": "stage",
+          "settings": {
+            "week_label": "WEEK 1-2:",
+            "badge": "Eerste Aanpassing",
+            "text": "Je lichaam begint te reageren. Veel gebruikers merken in de eerste weken al subtiele veranderingen in lichaamsgewicht.",
+            "bullet_1": "Eerste gewichtsverlies zichtbaar*",
+            "bullet_2": "Verminderd hongergevoel verdwijnt snel*"
+          }
+        },
+        {
+          "type": "stage",
+          "settings": {
+            "week_label": "WEEK 3-4:",
+            "badge": "Zichtbare Verandering",
+            "text": "De kilo's beginnen er echt af te gaan. Gebruikers rapporteren meetbare veranderingen op de weegschaal.",
+            "bullet_1": "2-4 kg gewichtsverlies*",
+            "bullet_2": "Vetverbranding neemt toe*"
+          }
+        },
+        {
+          "type": "stage",
+          "settings": {
+            "week_label": "WEEK 5-8:",
+            "badge": "Aanhoudende Resultaten",
+            "text": "Met consistent gebruik stapelen de resultaten zich op. Duidelijk zichtbaar gewichtsverlies en een slankere lichaamssamenstelling.",
+            "bullet_1": "5-8 kg gewichtsverlies*",
+            "bullet_2": "Verbeterde lichaamssamenstelling*"
+          }
+        },
+        {
+          "type": "stage",
+          "settings": {
+            "week_label": "WEEK 9-12+:",
+            "badge": "Langdurige Ondersteuning",
+            "text": "Bij voortgezet gebruik blijven de kilo's eraf gaan als onderdeel van een gezonde levensstijl.",
+            "bullet_1": "Aanhoudend gewichtsverlies*",
+            "bullet_2": "Groter gevoel van algeheel welzijn*"
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

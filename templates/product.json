@@ -296,12 +296,65 @@
         "padding_top": 60,
         "padding_bottom": 80
       }
+    },
+    "week_timeline": {
+      "type": "week-timeline",
+      "blocks": {
+        "stage-1": {
+          "type": "stage",
+          "settings": {
+            "week_label": "WEEK 1-2:",
+            "badge": "Eerste Aanpassing",
+            "text": "Je lichaam begint te reageren. Veel gebruikers merken in de eerste weken al subtiele veranderingen in lichaamsgewicht.",
+            "bullet_1": "Eerste gewichtsverlies zichtbaar*",
+            "bullet_2": "Verminderd hongergevoel verdwijnt snel*"
+          }
+        },
+        "stage-2": {
+          "type": "stage",
+          "settings": {
+            "week_label": "WEEK 3-4:",
+            "badge": "Zichtbare Verandering",
+            "text": "De kilo's beginnen er echt af te gaan. Gebruikers rapporteren meetbare veranderingen op de weegschaal.",
+            "bullet_1": "2-4 kg gewichtsverlies*",
+            "bullet_2": "Vetverbranding neemt toe*"
+          }
+        },
+        "stage-3": {
+          "type": "stage",
+          "settings": {
+            "week_label": "WEEK 5-8:",
+            "badge": "Aanhoudende Resultaten",
+            "text": "Met consistent gebruik stapelen de resultaten zich op. Duidelijk zichtbaar gewichtsverlies en een slankere lichaamssamenstelling.",
+            "bullet_1": "5-8 kg gewichtsverlies*",
+            "bullet_2": "Verbeterde lichaamssamenstelling*"
+          }
+        },
+        "stage-4": {
+          "type": "stage",
+          "settings": {
+            "week_label": "WEEK 9-12+:",
+            "badge": "Langdurige Ondersteuning",
+            "text": "Bij voortgezet gebruik blijven de kilo's eraf gaan als onderdeel van een gezonde levensstijl.",
+            "bullet_1": "Aanhoudend gewichtsverlies*",
+            "bullet_2": "Groter gevoel van algeheel welzijn*"
+          }
+        }
+      },
+      "block_order": ["stage-1", "stage-2", "stage-3", "stage-4"],
+      "settings": {
+        "heading": "Wat je kunt verwachten door de weken heen",
+        "disclaimer": "* Individuele resultaten kunnen variëren.",
+        "padding_top": 60,
+        "padding_bottom": 60
+      }
     }
   },
   "order": [
     "main",
     "quality_info",
     "quick_facts",
+    "week_timeline",
     "faq",
     "testimonials_product",
     "guarantee_banner",
