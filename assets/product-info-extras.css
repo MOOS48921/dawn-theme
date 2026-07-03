@@ -186,3 +186,15 @@
 .product-urgency__text strong {
   color: #c0392b;
 }
+
+/* Brand-green primary buy button */
+.product-form__submit.button--primary {
+  background: #1a5c2e;
+  border-color: #1a5c2e;
+  color: #ffffff;
+}
+
+.product-form__submit.button--primary:hover {
+  background: #144a25;
+  border-color: #144a25;
+}
