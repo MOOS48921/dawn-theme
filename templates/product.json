@@ -91,6 +91,7 @@
       },
       "block_order": ["heading", "text"],
       "settings": {
+        "image": "shopify://shop_images/magnific_professional-photograph-o_ohTfk1H829.png",
         "height": "medium",
         "desktop_image_width": "medium",
         "layout": "text_first",
