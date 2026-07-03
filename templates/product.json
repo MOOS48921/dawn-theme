@@ -186,42 +186,66 @@
         "row-1": {
           "type": "collapsible_row",
           "settings": {
-            "heading": "Hoe snel wordt mijn bestelling verzonden?",
-            "icon": "stopwatch",
-            "row_content": "<p>Alle bestellingen worden discreet verpakt en verstuurd binnen 1-2 werkdagen. Je ontvangt een track &amp; trace code zodra je pakket onderweg is.<\/p>"
+            "heading": "Is Retatrutide (GLP-3) gevaarlijk?",
+            "icon": "none",
+            "row_content": "<p>Uit onderzoek is gebleken dat Retatrutide (GLP-3) veilig is wanneer het correct wordt gebruikt. Al onze producten beschikken over de juiste certificaten en zijn onafhankelijk getest op een zuiverheid van ≥99%. Je kunt de labresultaten van elke batch terugvinden op de productpagina.<\/p>"
           }
         },
         "row-2": {
           "type": "collapsible_row",
           "settings": {
-            "heading": "Wat is de kwaliteit van jullie peptiden?",
-            "icon": "check_mark",
-            "row_content": "<p>Al onze peptiden worden geproduceerd in Europa en getest door onafhankelijke laboratoria op een zuiverheid van ≥99%. Elk product wordt geleverd met een Certificaat van Analyse.<\/p>"
+            "heading": "Hoe snel zie ik resultaten?",
+            "icon": "none",
+            "row_content": "<p>De meeste gebruikers rapporteren eerste veranderingen binnen 1-2 weken. Significante resultaten worden doorgaans gemeld tussen week 3 en 8, afhankelijk van dosering en individuele factoren.<\/p>"
           }
         },
         "row-3": {
           "type": "collapsible_row",
           "settings": {
+            "heading": "Hoe wordt het geleverd?",
+            "icon": "none",
+            "row_content": "<p>Alle bestellingen worden discreet verpakt en verstuurd binnen 1-2 werkdagen. Je ontvangt een track &amp; trace code zodra je pakket onderweg is.<\/p>"
+          }
+        },
+        "row-4": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Wat is de kwaliteit van jullie peptiden?",
+            "icon": "none",
+            "row_content": "<p>Al onze peptiden worden geproduceerd in Europa en getest door onafhankelijke laboratoria op een zuiverheid van ≥99%. Elk product wordt geleverd met een Certificaat van Analyse.<\/p>"
+          }
+        },
+        "row-5": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Kan ik meerdere peptiden combineren?",
+            "icon": "none",
+            "row_content": "<p>Veel onderzoekers combineren verschillende peptiden. Wij adviseren echter altijd om dit te doen op basis van gedegen onderzoek en onder begeleiding van een gekwalificeerde professional.<\/p>"
+          }
+        },
+        "row-6": {
+          "type": "collapsible_row",
+          "settings": {
             "heading": "Wat als ik niet tevreden ben met mijn bestelling?",
-            "icon": "heart",
-            "row_content": "<p>We bieden een 90-dagen geld-terug-garantie. Ben je niet tevreden? Neem dan contact op met onze klantenservice en we lossen het op.<\/p>"
+            "icon": "none",
+            "row_content": "<p>We bieden een 90-dagen geld-terug-garantie. Ben je niet tevreden? Neem dan contact op met onze klantenservice en we lossen het op — geen vragen gesteld.<\/p>"
           }
         }
       },
-      "block_order": ["row-1", "row-2", "row-3"],
+      "block_order": ["row-1", "row-2", "row-3", "row-4", "row-5", "row-6"],
       "settings": {
         "caption": "",
-        "heading": "Veelgestelde vragen",
-        "heading_size": "h2",
-        "heading_alignment": "left",
+        "heading": "Veelgestelde Vragen",
+        "heading_size": "h1",
+        "heading_alignment": "center",
         "layout": "none",
         "container_color_scheme": "scheme-1",
         "color_scheme": "scheme-1",
         "image_ratio": "adapt",
         "desktop_layout": "image_first",
         "open_first_collapsible_row": false,
-        "padding_top": 36,
-        "padding_bottom": 36
+        "padding_top": 60,
+        "padding_bottom": 60
       }
     },
     "testimonials_product": {
