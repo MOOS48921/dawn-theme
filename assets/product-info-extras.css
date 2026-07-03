@@ -157,3 +157,32 @@
   font-size: 1.1rem;
   opacity: 0.6;
 }
+
+/* Urgency notice */
+.product-urgency {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  background: #fdf6e8;
+  border-left: 4px solid #c0392b;
+  border-radius: 6px;
+  padding: 1.4rem 1.6rem;
+  margin: 1.4rem 0;
+}
+
+.product-urgency__icon {
+  color: #c0392b;
+  flex-shrink: 0;
+  margin-top: 0.1rem;
+}
+
+.product-urgency__text {
+  font-size: 1.35rem;
+  line-height: 1.6;
+  margin: 0;
+  color: #4a3a1a;
+}
+
+.product-urgency__text strong {
+  color: #c0392b;
+}

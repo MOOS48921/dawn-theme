@@ -1,0 +1,20 @@
+{%- comment -%}
+  Renders an urgency/scarcity notice above the buy button.
+  Accepts: block (section block with prefix/text settings)
+{%- endcomment -%}
+
+<div class="product-urgency">
+  <span class="product-urgency__icon" aria-hidden="true">
+    <svg width="20" height="18" viewBox="0 0 20 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M10 1L1 17h18L10 1z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/>
+      <line x1="10" y1="7" x2="10" y2="11.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+      <circle cx="10" cy="14" r="1" fill="currentColor"/>
+    </svg>
+  </span>
+  <p class="product-urgency__text">
+    {%- if block.settings.prefix != blank -%}
+      <strong>{{ block.settings.prefix }}</strong>
+    {%- endif -%}
+    {{ block.settings.text }}
+  </p>
+</div>

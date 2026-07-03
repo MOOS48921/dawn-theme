@@ -19,6 +19,13 @@
         "quantity_selector": {
           "type": "quantity_selector"
         },
+        "urgency_notice": {
+          "type": "urgency_notice",
+          "settings": {
+            "prefix": "Let op:",
+            "text": "Door de grote vraag is de voorraad opnieuw beperkt. Bestellingen die nu worden geplaatst, worden binnen 1 tot 2 dagen verzonden. Zodra deze ronde is uitgeleverd, sluiten we de bestelmogelijkheid tijdelijk voor nieuwe klanten. Door nu te bestellen bent u verzekerd van uw levering."
+          }
+        },
         "buy_buttons": {
           "type": "buy_buttons",
           "settings": {
@@ -51,6 +58,7 @@
         "price",
         "variant_picker",
         "quantity_selector",
+        "urgency_notice",
         "buy_buttons",
         "trust_badges",
         "delivery_timeline",
