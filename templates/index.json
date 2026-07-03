@@ -3,6 +3,7 @@
     "hero_banner": {
       "type": "hero-banner",
       "settings": {
+        "hero_image": "shopify://shop_images/magnific_professional-product-phot_xgFJYkVjfW.png",
         "eyebrow_text": "WAAR KWALITEIT HEERST",
         "heading": "WELKOM BIJ PEPTIDESMEESTER",
         "button_primary_label": "SHOP BUNDELS",
